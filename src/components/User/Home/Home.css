@@ -1,0 +1,277 @@
+.home-content {
+    display: flex;
+    gap: 40px;
+    margin-left: 270px;
+    padding-top: 50px;
+}
+
+.home-wrap {
+    position: relative;
+}
+
+.home {
+    width: 100%;
+    padding-top: 100px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.home-right {
+    width: 30%;
+}
+
+.home-left {
+    width: 70%;
+    text-align: center;
+}
+.reward-img {
+    text-align: center;
+}
+.recognitions-list {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.award-icon img {
+    width: 48px;
+    height: 48px;
+}
+
+.award {
+    width: 50%;
+    border-radius: 12px;
+    padding: 12px 24px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.reward-text {
+    padding: 10px 0 5px;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0;
+}
+
+.reward-count {
+    font-size: 22px;
+    font-weight: 600;
+    color: #04a6cf;
+}
+
+.my-reward,
+.leaderboard {
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.reward-img img {
+    width: 300px;
+    height: auto;
+}
+
+.reward-item {
+    margin-bottom: 30px;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px -4px 6px -3px rgba(151, 151, 151, .2), 0px 4px 6px rgba(140, 140, 140, .2);
+}
+
+.reward-listing li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reward-logo img {
+    width: 45px;
+    height: 45px;
+}
+
+.reward-content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.reward-listing li {
+    padding-bottom: 20px;
+}
+
+.reward-name,
+.reward-number {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.reward-number {
+    color: #04a6cf;
+}
+
+.reward-listing {
+    padding-top: 20px;
+}
+
+.reward-you {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reward-you {
+    border-radius: 12px;
+    margin: 20px 0;
+    background-color: #f4f4f4;
+    padding: 12px 24px;
+    box-shadow: 0px -2px 6px -3px rgba(0, 0, 0, .2), 0px 4px 6px rgba(33, 37, 41, .2);
+}
+
+.you {
+    text-align: center;
+    color: #04a6cf;
+}
+
+.avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 5px solid #04a6cf;
+}
+
+.shoutout-form {
+    padding: 20px;
+    background: #f4f4f4;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px -2px 6px -3px rgba(0, 0, 0, .2), 0px 4px 6px rgba(33, 37, 41, .2);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+}
+.username {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+textarea {
+    max-width: 550px;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+textarea:focus {
+    border: none;
+}
+textarea::placeholder {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.points-dropdown {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    list-style-type: none;
+    padding: 0;
+    width: 50%;
+    margin: 5px auto 0 auto;
+}
+
+.points-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.points-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+.create {
+    border-radius: 12px;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.create:hover {
+    background: #04a6cf;
+    color: #fff;
+}
+.points-values {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.points-values button {
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 5px solid transparent;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.points-values button:hover {
+    border: 5px solid #04a6cf;
+}
+
+.select-form {
+    border-radius: 20px;
+    background-color: #f4f4f4;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    box-shadow: 0px -2px 6px -3px rgba(0, 0, 0, .2), 0px 4px 6px rgba(33, 37, 41, .2);
+}
+.select-form p {
+    padding: 14px 0;
+}
+.description {
+    text-align: left;
+    color: #04a6cf;
+}
+.value-desc {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+}
+.value-desc p {
+    font-weight: 400;
+}
+.submit-message {
+    background-color: #04a6cf;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 10px;
+}
+.select-form select {
+    background-color: #ddd;
+    color: #1c1c1c;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 5px solid transparent;
+    padding: 8px 16px;
+    cursor: pointer;
+}
