@@ -11,6 +11,10 @@ import logo from "../../../assets/intro-person.png";
 import medal from "../../../assets/medal.png";
 import double from "../../../assets/double.png";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import awardImage from "../../../assets/award.webp";
+import congratsImg from "../../../assets/congrats.webp";
 
 const Home = () => {
   const [category, setCategory] = useState("Category");
@@ -46,23 +50,67 @@ const Home = () => {
   };
 
   const handleSubmit = () => {
+    if (
+      !user &&
+      message.trim() === "" &&
+      category === "Category" &&
+      subCategory === "Sub Category"
+    ) {
+      toast.error("Please fill in all fields before submitting!", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    if (!user) {
+      toast.error("Please select the member!", { position: "top-center" });
+      return;
+    }
+
+    if (message.trim() === "") {
+      toast.error("Please enter a message!", { position: "top-center" });
+      return;
+    }
+
+    if (category === "Category") {
+      toast.error("Please select a category!", { position: "top-center" });
+      return;
+    }
+
+    if (subCategory === "Sub Category") {
+      toast.error("Please select a sub-category!", { position: "top-center" });
+      return;
+    }
+
     Swal.fire({
       title: "Are you sure?",
       text: `User: ${user}, Message: "${message}", SubCateogry: ${subCategory}, Category: ${category}`,
       icon: "question",
       showCancelButton: true,
-      confirmButtonText: "Yes, create it!",
+      confirmButtonText: "Yes, submit it!",
       cancelButtonText: "No, cancel!",
     }).then((result) => {
       if (result.isConfirmed) {
         setSubmitMessage(
           `User: ${user}, Message: "${message}", SubCateogry: ${subCategory}, Category: ${category}`
         );
-        Swal.fire("Created!", "Your recognition has been created.", "success");
+
+        Swal.fire({
+          title: "Congratulations!",
+          html: `
+            
+            <p>Your recognition has been submitted</p>
+            
+          `,
+          imageUrl: `${congratsImg}`,
+          imageWidth: 318,
+          imageHeight: 200,
+          showConfirmButton: true,
+        });
       } else {
         Swal.fire(
           "Cancelled",
-          "Your recognition has not been created.",
+          "Your recognition has not been submitted.",
           "error"
         );
       }
@@ -76,23 +124,22 @@ const Home = () => {
       <div className="home">
         <div className="home-content">
           <div className="home-left">
-            <div className="select-form">
-              <h1 className="h3">Recognize Someone</h1>
-              <p>Select a team member to recognize</p>
-              <select
-                onChange={(e) => handleMemberSelect(e.target.value)}
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Select Member
-                </option>
-                <option value="rohil">rohil</option>
-                <option value="xyz">xyz</option>
-                <option value="abc">abc</option>
-              </select>
-            </div>
             <div className="shoutout-form">
               <h2>Recognize Now</h2>
+              <div className="select-form">
+                <p>Select a team member to recognize</p>
+                <select
+                  onChange={(e) => handleMemberSelect(e.target.value)}
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Select Member
+                  </option>
+                  <option value="rohil">rohil</option>
+                  <option value="xyz">xyz</option>
+                  <option value="abc">abc</option>
+                </select>
+              </div>
               <div className="user-info">
                 <div className="avatar">
                   <img src={logo} alt="User Avatar" />
@@ -145,7 +192,7 @@ const Home = () => {
                 </div>
               </div>
               <button className="create" onClick={handleSubmit}>
-                Create
+                Submit
               </button>
             </div>
           </div>
@@ -235,6 +282,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

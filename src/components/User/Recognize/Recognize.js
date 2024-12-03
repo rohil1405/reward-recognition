@@ -1,6 +1,6 @@
 import SlideBar from "../../SlideBar/SlideBar";
 import "./Recognize.css";
-import Header from "../Header/Header";
+import Header from "../../Header/Header";
 
 const Recognize = () => {
   return (
@@ -9,7 +9,9 @@ const Recognize = () => {
       <SlideBar />
       <div className="container">
         <div className="recognize">
-          <div className="recognize"></div>
+          <div className="recognize">
+            <div>Recognize</div>
+          </div>
         </div>
       </div>
     </div>

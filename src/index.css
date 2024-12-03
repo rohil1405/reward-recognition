@@ -77,10 +77,51 @@ h5, .h5 {
 p {
   margin: 0;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: #1c1c1c;
 }
 
+.swal2-popup {
+  border-radius: 20px;
+  background-color: #f4f4f4;
+}
+.swal2-confirm {
+  transition: all 0.3s ease-in-out;
+  background-color: #04a6cf;
+  font-size: 18px;
+  border: 1px solid #04a6cf;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.swal2-confirm:hover {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 18px;
+
+}
+
+.swal2-cancel {
+  transition: all 0.3s ease-in-out;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.swal2-cancel:hover {
+  border: 1px solid #04a6cf;
+  background-color: #04a6cf;
+  color: #fff;
+}
+
+#swal2-html-container, #swal2-title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#swal2-title {
+  padding: 15px 15px 0 15px !important;
+}
 
 
 

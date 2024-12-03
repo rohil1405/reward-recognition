@@ -203,13 +203,14 @@ textarea::placeholder {
 .create {
     border-radius: 12px;
     display: inline-block;
-    background-color: #000;
+    background-color: rgba(0,0,0,0.8);
     color: #fff;
     font-size: 20px;
     font-weight: 600;
     padding: 12px 24px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    letter-spacing: 0.1rem;
 }
 .create:hover {
     background: #04a6cf;
@@ -223,6 +224,7 @@ textarea::placeholder {
 }
 
 .points-values button {
+    width: 50%;
     padding: 8px 16px;
     border-radius: 12px;
     border: 5px solid transparent;
@@ -236,20 +238,17 @@ textarea::placeholder {
     border: 5px solid #04a6cf;
 }
 
-.select-form {
-    border-radius: 20px;
-    background-color: #f4f4f4;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    padding: 20px;
-    box-shadow: 0px -2px 6px -3px rgba(0, 0, 0, .2), 0px 4px 6px rgba(33, 37, 41, .2);
-}
+
 .select-form p {
     padding: 14px 0;
 }
 .description {
     text-align: left;
     color: #04a6cf;
+}
+.shoutout-form h2 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
 }
 .value-desc {
     display: flex;
@@ -274,4 +273,12 @@ textarea::placeholder {
     border: 5px solid transparent;
     padding: 8px 16px;
     cursor: pointer;
+}
+
+.congrats-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
 }
