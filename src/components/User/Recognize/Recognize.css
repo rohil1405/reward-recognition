@@ -1,0 +1,123 @@
+.redeemption-reward {
+    padding-top: 30px;
+    margin-left: 300px;
+}
+
+.redeemption-reward-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+
+.redeemption-reward-item {
+    width: 45%;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0px -4px 6px -3px rgba(151, 151, 151, .2), 0px 4px 6px rgba(140, 140, 140, .2);
+}
+
+.redeemption-reward-item .h2 {
+    padding: 12px 24px;
+    font-size: 30px;
+    background-color: #04a6cf;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.redeemption-reward-content {
+    background-color: #f4f4f4;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.redeemption-reward-icon img {
+    width: 250px;
+    height: 250px;
+}
+
+.redeemption-reward-points {
+    font-size: 35px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #04a6cf;
+    padding: 7px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.table-container {
+    padding-top: 70px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #1c1c1c;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+th,
+td {
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #1c1c1c;
+    padding: 10px;
+}
+.points {
+    font-weight: 600;
+}
+th {
+    background-color: #f4f4f4;
+    color: #1c1c1c;
+    padding: 12px 8px;
+}
+
+tr:hover {
+    background-color: rgba(4,166,207,0.5);
+}
+tr:hover .points {
+    color: #fff;
+}
+
+.view {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination button {
+    padding: 12px 24px;
+    margin: 0 5px;
+    background-color: #04a6cf;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 18px;
+    border: 4px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+.pagination button:hover {
+    background-color: transparent;
+    color: #000;
+    border: 4px solid #04a6cf;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+}
+
+.pagination span {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: 600;
+}

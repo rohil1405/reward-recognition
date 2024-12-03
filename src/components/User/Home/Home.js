@@ -13,8 +13,8 @@ import double from "../../../assets/double.png";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import awardImage from "../../../assets/award.webp";
 import congratsImg from "../../../assets/congrats.webp";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [category, setCategory] = useState("Category");
@@ -204,23 +204,25 @@ const Home = () => {
             </div>
 
             <div className="reward-item">
-              <div className="my-reward">My Recognitions</div>
-              <div className="recognitions-list">
-                <div className="award">
-                  <div className="award-icon">
-                    <img src={awardIcon} alt="Award Icon" />
+              <Link to="/my-recognitions">
+                <div className="my-reward">My Recognitions</div>
+                <div className="recognitions-list">
+                  <div className="award">
+                    <div className="award-icon">
+                      <img src={awardIcon} alt="Award Icon" />
+                    </div>
+                    <div className="reward-text">Reward</div>
+                    <div className="reward-count">10</div>
                   </div>
-                  <div className="reward-text">Awards</div>
-                  <div className="reward-count">10</div>
-                </div>
-                <div className="award">
-                  <div className="award-icon">
-                    <img src={badgesIcon} alt="Badge Icon" />
+                  <div className="award">
+                    <div className="award-icon">
+                      <img src={badgesIcon} alt="Badge Icon" />
+                    </div>
+                    <div className="reward-text">Redemption</div>
+                    <div className="reward-count">45</div>
                   </div>
-                  <div className="reward-text">Badges</div>
-                  <div className="reward-count">45</div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="reward-item">

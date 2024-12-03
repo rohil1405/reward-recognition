@@ -26,7 +26,7 @@ const SlideBar = () => {
             </li>
 
             <li>
-              <Link to="/recognize">
+              <Link to="/my-recognitions">
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const SlideBar = () => {
                     transform="translate(14,1)"
                   />
                 </svg>
-                <span>Recognize</span>
+                <span>Redemptions</span>
               </Link>
             </li>
 
