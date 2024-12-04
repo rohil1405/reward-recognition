@@ -50,7 +50,7 @@ const Header = () => {
               </div>
               <div className="redeem-content">
                 <div className="redeem-text">Reward Points</div>
-                <div className="points">9000</div>
+                <div className="points">900</div>
               </div>
             </div>
 

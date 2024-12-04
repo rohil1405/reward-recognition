@@ -176,7 +176,7 @@ textarea {
     border-radius: 12px;
     border: 1px solid #fff;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
 }
 textarea:focus {
     border: none;
@@ -236,7 +236,7 @@ textarea::placeholder {
     border: 5px solid transparent;
     color: #000;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     background-color: #ddd;
     cursor: pointer;
 }

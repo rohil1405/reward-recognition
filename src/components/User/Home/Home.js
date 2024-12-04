@@ -21,24 +21,24 @@ const Home = () => {
   const [subCategory, setSubCategory] = useState("Sub Category");
   const [message, setMessage] = useState("");
   const [user, setUser] = useState("");
-  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
-  const [isSubCategoryDropdownOpen, setIsSubCategoryDropdownOpen] =
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const [isSubCategoryOpen, setIsSubCategoryOpen] =
     useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
-  const toggleCategoryDropdown = () =>
-    setIsCategoryDropdownOpen(!isCategoryDropdownOpen);
-  const toggleSubCategoryDropdown = () =>
-    setIsSubCategoryDropdownOpen(!isSubCategoryDropdownOpen);
+  const toggleCategory = () =>
+    setIsCategoryOpen(!isCategoryOpen);
+  const toggleSubCategory = () =>
+    setIsSubCategoryOpen(!isSubCategoryOpen);
 
   const handleCategorySelect = (selectedCategory) => {
     setCategory(selectedCategory);
-    setIsCategoryDropdownOpen(false);
+    setIsCategoryOpen(false);
   };
 
   const handleSubCategorySelect = (selectedSubCategory) => {
     setSubCategory(selectedSubCategory);
-    setIsSubCategoryDropdownOpen(false);
+    setIsSubCategoryOpen(false);
   };
 
   const handleMessageChange = (event) => {
@@ -46,7 +46,7 @@ const Home = () => {
   };
 
   const handleMemberSelect = (member) => {
-    setUser(`@${member}`);
+    setUser(`${member}`);
   };
 
   const handleSubmit = () => {
@@ -91,22 +91,37 @@ const Home = () => {
       cancelButtonText: "No, cancel!",
     }).then((result) => {
       if (result.isConfirmed) {
-        setSubmitMessage(
-          `User: ${user}, Message: "${message}", SubCateogry: ${subCategory}, Category: ${category}`
-        );
+        const storeData = {
+          img: logo,
+          name: user,
+          category: category,
+          subcategory: subCategory,
+          description: message,
+          points: Math.floor(Math.random() * 100) + 1,
+        };
+
+        const store =
+          JSON.parse(localStorage.getItem("recognize")) || [];
+
+        const multipleDataStore = [...store, storeData];
+
+        localStorage.setItem("recognize", JSON.stringify(multipleDataStore));
 
         Swal.fire({
           title: "Congratulations!",
           html: `
-            
             <p>Your recognition has been submitted</p>
-            
           `,
           imageUrl: `${congratsImg}`,
           imageWidth: 318,
           imageHeight: 200,
           showConfirmButton: true,
         });
+
+        setUser("");
+        setMessage("");
+        setCategory("Category");
+        setSubCategory("Sub Category");
       } else {
         Swal.fire(
           "Cancelled",
@@ -155,11 +170,11 @@ const Home = () => {
 
               <div className="points-values">
                 <div className="points-selection">
-                  <button onClick={toggleCategoryDropdown}>
+                  <button onClick={toggleCategory}>
                     {category}
                     <span>▼</span>
                   </button>
-                  {isCategoryDropdownOpen && (
+                  {isCategoryOpen && (
                     <ul className="points-dropdown">
                       {["abc", "xyz", "pqr"].map((category) => (
                         <li
@@ -174,10 +189,10 @@ const Home = () => {
                 </div>
 
                 <div className="values-selection">
-                  <button onClick={toggleSubCategoryDropdown}>
+                  <button onClick={toggleSubCategory}>
                     {subCategory} <span>▼</span>
                   </button>
-                  {isSubCategoryDropdownOpen && (
+                  {isSubCategoryOpen && (
                     <ul className="points-dropdown">
                       {["xyz", "pqr", "abc"].map((subCategory) => (
                         <li
