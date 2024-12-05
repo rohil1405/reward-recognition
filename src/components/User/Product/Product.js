@@ -1,4 +1,7 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { setActiveTab } from "../../../slices/ProductTabsSlice.js";
 import Header from "../../Header/Header";
 import SlideBar from "../../SlideBar/SlideBar";
 import "./Product.css";
@@ -8,9 +11,12 @@ const Laptop = lazy(() => import("./Laptop"));
 const Cap = lazy(() => import("./Cap"));
 const Mouse = lazy(() => import("./Mouse"));
 const TShirt = lazy(() => import("./TShirt.js"));
+const Board = lazy(() => import("./Board.js"));
+const Pen = lazy(() => import("./Pen.js"));
 
 const ProductTab = () => {
-  const [activeTab, setActiveTab] = useState("Mouse");
+  const dispatch = useDispatch();
+  const activeTab = useSelector((state) => state.productTab.activeTab);
 
   const renderActiveTab = () => {
     switch (activeTab) {
@@ -22,8 +28,12 @@ const ProductTab = () => {
         return <Laptop />;
       case "Cap":
         return <Cap />;
-      case "TShirt":
+      case "T-Shirt":
         return <TShirt />;
+      case "Key-board":
+        return <Board />;
+      case "Pen":
+        return <Pen />;
       default:
         return <All />;
     }
@@ -40,15 +50,16 @@ const ProductTab = () => {
             {[
               "All",
               "Cap",
-              "TShirt",
+              "T-Shirt",
               "Mouse",
               "Laptop",
               "Key-board",
+              "Pen",
             ].map((tab) => (
               <button
                 key={tab}
                 className={activeTab === tab ? "tab active" : "tab"}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => dispatch(setActiveTab(tab))}
               >
                 {tab}
               </button>

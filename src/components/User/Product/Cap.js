@@ -8,127 +8,110 @@ import capFive from "../../../assets/capFive.jpg";
 import capSix from "../../../assets/capSix.jpg";
 import capSeven from "../../../assets/capSeven.jpg";
 import capEight from "../../../assets/capEight.webp";
+import ProductList from "./ProductList";
+
+export const CapCategory = [
+  {
+    id: 11,
+    image: cap,
+    name: "React-Cap",
+    points: "50 Points",
+    description: "A stylish cap for React enthusiasts.",
+    modal: "React Cap Modal",
+    size: "One Size",
+    type: "Tech Cap",
+    bigDescription:
+      "Show your love for React with this premium quality cap. Perfect for developers and fans of React.js.",
+  },
+  {
+    id: 12,
+    image: capTwo,
+    name: "Angular-Cap",
+    points: "50 Points",
+    description: "A must-have cap for Angular developers.",
+    modal: "Angular Cap Modal",
+    size: "One Size",
+    type: "Tech Cap",
+    bigDescription:
+      "This Angular cap is a great addition to your wardrobe. Represent your skills in Angular while staying stylish.",
+  },
+  {
+    id: 13,
+    image: capThree,
+    name: "HTML-Cap",
+    points: "50 Points",
+    description: "A cap for HTML lovers and web developers.",
+    modal: "HTML Cap Modal",
+    size: "One Size",
+    type: "Tech Cap",
+    bigDescription:
+      "HTML is the backbone of web development, and now you can showcase your passion with this HTML cap.",
+  },
+  {
+    id: 14,
+    image: capFour,
+    name: "PHP-Cap",
+    points: "50 points",
+    description: "For PHP developers who like to stay cool and stylish.",
+    modal: "PHP Cap Modal",
+    size: "One Size",
+    type: "Tech Cap",
+    bigDescription:
+      "Embrace the power of PHP with this sleek cap. A must-have for any PHP developer's collection.",
+  },
+  {
+    id: 15,
+    image: capFive,
+    name: "HubSpot-Cap",
+    points: "50 points",
+    description: "A cap for marketers and HubSpot users.",
+    modal: "HubSpot Cap Modal",
+    size: "One Size",
+    type: "Marketing Cap",
+    bigDescription:
+      "Whether you're into inbound marketing or HubSpot, this cap is perfect for showing off your expertise.",
+  },
+  {
+    id: 16,
+    image: capSix,
+    name: "Laravel-Cap",
+    points: "50 points",
+    description:
+      "For Laravel developers who want to showcase their framework of choice.",
+    modal: "Laravel Cap Modal",
+    size: "One Size",
+    type: "Tech Cap",
+    bigDescription:
+      "Laravel developers will love this stylish cap that celebrates the PHP framework. Great for dev meetups and casual wear.",
+  },
+  {
+    id: 17,
+    image: capSeven,
+    name: "Javascript-Cap",
+    points: "50 points",
+    description: "For the JavaScript enthusiasts and developers.",
+    modal: "JavaScript Cap Modal",
+    size: "One Size",
+    type: "Tech Cap",
+    bigDescription:
+      "Show off your love for JavaScript with this trendy cap. Perfect for those who work or play with JavaScript.",
+  },
+  {
+    id: 18,
+    image: capEight,
+    name: "SCSS-Cap",
+    points: "50 points",
+    description: "A cap for front-end developers who love styling with SCSS.",
+    modal: "SCSS Cap Modal",
+    size: "One Size",
+    type: "Tech Cap",
+    bigDescription:
+      "Whether you're styling components or building a responsive design, this SCSS cap is the perfect accessory for any front-end developer.",
+  },
+];
 
 const Cap = () => {
-  const CapCategory = [
-    {
-      id: 1,
-      image: cap,
-      name: "React-Cap",
-      points: "50 Points",
-    },
-    {
-      id: 2,
-      image: capTwo,
-      name: "Angular-Cap",
-      points: "50 Points",
-    },
-    {
-      id: 3,
-      image: capThree,
-      name: "HTML-Cap",
-      points: "50 points",
-    },
-    {
-      id: 4,
-      image: capFour,
-      name: "PHP-Cap",
-      points: "50 points",
-    },
-    {
-      id: 5,
-      image: capFive,
-      name: "HubSpot-Cap",
-      points: "50 points",
-    },
-    {
-      id: 6,
-      image: capSix,
-      name: "Laravel-Cap",
-      points: "50 points",
-    },
-    {
-      id: 7,
-      image: capSeven,
-      name: "Javascript-Cap",
-      points: "50 points",
-    },
-    {
-      id: 8,
-      image: capEight,
-      name: "SCSS-Cap",
-      points: "50 points",
-    },
-  ];
-  return (
-    <div className="product-tabs">
-      <div className="product-tab-content">
-        <ul className="product-listing">
-          {CapCategory.map((product) => (
-            <li key={product.id} className="product-item">
-              <div className="product-img">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="product-content">
-                <div className="product-left">
-                  <a href="#" target="_self" className="product-name">
-                    {product.name}
-                  </a>
-                  <div className="product-points">{product.points}</div>
-                </div>
-                <div className="product-right">
-                  <a href="#" className="product-cart">
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.52083 2.97916L4.4275 3.30916L5.31025 13.8261C5.34416 14.2399 5.53286 14.6258 5.83869 14.9066C6.14453 15.1875 6.54502 15.3427 6.96025 15.3413H16.9611C17.3587 15.3418 17.743 15.1986 18.0435 14.9383C18.344 14.6779 18.5403 14.3178 18.5964 13.9242L19.4672 7.91266C19.4905 7.75278 19.4819 7.5899 19.4422 7.43332C19.4024 7.27674 19.3321 7.12954 19.2354 7.00014C19.1387 6.87073 19.0174 6.76166 18.8785 6.67916C18.7396 6.59666 18.5858 6.54234 18.4259 6.51932C18.3672 6.51291 4.73367 6.50832 4.73367 6.50832"
-                        stroke="#272343"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.9479 9.89539H15.4898"
-                        stroke="#272343"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M6.55783 18.5194C6.62506 18.5165 6.69217 18.5273 6.75513 18.551C6.81809 18.5748 6.87559 18.611 6.92418 18.6575C6.97277 18.7041 7.01143 18.76 7.03785 18.8219C7.06426 18.8837 7.07788 18.9503 7.07788 19.0176C7.07788 19.0849 7.06426 19.1515 7.03785 19.2134C7.01143 19.2753 6.97277 19.3312 6.92418 19.3777C6.87559 19.4243 6.81809 19.4605 6.75513 19.4842C6.69217 19.508 6.62506 19.5187 6.55783 19.5158C6.4294 19.5103 6.30805 19.4554 6.21912 19.3626C6.13019 19.2698 6.08054 19.1462 6.08054 19.0176C6.08054 18.8891 6.13019 18.7655 6.21912 18.6726C6.30805 18.5798 6.4294 18.5249 6.55783 18.5194Z"
-                        fill="#272343"
-                        stroke="#272343"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M16.8987 18.5194C17.0312 18.5194 17.1583 18.572 17.252 18.6657C17.3457 18.7594 17.3983 18.8865 17.3983 19.019C17.3983 19.1515 17.3457 19.2786 17.252 19.3723C17.1583 19.4659 17.0312 19.5186 16.8987 19.5186C16.7662 19.5186 16.6392 19.4659 16.5455 19.3723C16.4518 19.2786 16.3992 19.1515 16.3992 19.019C16.3992 18.8865 16.4518 18.7594 16.5455 18.6657C16.6392 18.572 16.7662 18.5194 16.8987 18.5194Z"
-                        fill="#272343"
-                        stroke="#272343"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
+  return <ProductList products={CapCategory} />;
 };
 
 export default Cap;
