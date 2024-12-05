@@ -77,7 +77,7 @@ const Recognize = () => {
               <img src={award} />
             </div>
             <div className="point-list">
-              <div className="point-title">Total Recognize Count</div>
+              <div className="point-title">Total Recognition Count</div>
               <div className="point-count">{totalRecognizeCount}</div>
             </div>
             <div className="point-list">
