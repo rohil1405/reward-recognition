@@ -1,6 +1,6 @@
 .redeemption-reward {
     padding-top: 30px;
-    margin-left: 300px;
+    margin-left: 230px;
 }
 
 .redeemption-reward-row {
@@ -48,21 +48,25 @@
 }
 
 .table-container {
-    padding-top: 70px;
+    padding: 50px;
+    margin: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 30px;
 }
 
 table {
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.09);
+    border: none;
     width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #1c1c1c;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 th,
 td {
+    border: none;
     font-size: 18px;
     text-align: center;
-    border: 1px solid #1c1c1c;
     padding: 10px;
 }
 
@@ -70,20 +74,19 @@ td {
     font-weight: 600;
 }
 
+thead {
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 5px 5px 5px rgba(0,0,0,0.09);
+}
+
 th {
-    background-color: #f4f4f4;
     color: #1c1c1c;
     padding: 12px 8px;
 }
 
 tr:hover {
-    background-color: rgba(4, 166, 207, 0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
-
-tr:hover .points {
-    color: #fff;
-}
-
 .view {
     width: 30px;
     height: 30px;
@@ -91,14 +94,14 @@ tr:hover .points {
 }
 
 .pagination {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .pagination button {
-    padding: 12px 24px;
+    padding: 6px 15px;
     margin: 0 5px;
     background-color: #04a6cf;
     border: none;
@@ -223,7 +226,30 @@ tr:hover .points {
 .redeemption-reward-item.point {
     padding: 20px 20px 0 20px;
 }
+.filters {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 30px;
+}
+.filter-category {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.filter-by {
+    color: #1c1c1c;
+    font-size: 18px;
+    font-weight: 600;
+}
+.filters select  {
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #1c1c1c;
+    letter-spacing: 0.05rem;
+}
 
-/* .modal-body li:first-child {
-    border-bottom: 1px solid #000;
-} */
+
+

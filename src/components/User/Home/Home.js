@@ -22,14 +22,11 @@ const Home = () => {
   const [message, setMessage] = useState("");
   const [user, setUser] = useState("");
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const [isSubCategoryOpen, setIsSubCategoryOpen] =
-    useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
+  const [isSubCategoryOpen, setIsSubCategoryOpen] = useState(false);
+  const [title, setTitle] = useState("");
 
-  const toggleCategory = () =>
-    setIsCategoryOpen(!isCategoryOpen);
-  const toggleSubCategory = () =>
-    setIsSubCategoryOpen(!isSubCategoryOpen);
+  const toggleCategory = () => setIsCategoryOpen(!isCategoryOpen);
+  const toggleSubCategory = () => setIsSubCategoryOpen(!isSubCategoryOpen);
 
   const handleCategorySelect = (selectedCategory) => {
     setCategory(selectedCategory);
@@ -41,8 +38,12 @@ const Home = () => {
     setIsSubCategoryOpen(false);
   };
 
-  const handleMessageChange = (event) => {
-    setMessage(event.target.value);
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
   };
 
   const handleMemberSelect = (member) => {
@@ -52,6 +53,7 @@ const Home = () => {
   const handleSubmit = () => {
     if (
       !user &&
+      title.trim() === "" &&
       message.trim() === "" &&
       category === "Category" &&
       subCategory === "Sub Category"
@@ -64,6 +66,13 @@ const Home = () => {
 
     if (!user) {
       toast.error("Please select the member!", { position: "top-center" });
+      return;
+    }
+
+    if (title.trim() === "") {
+      toast.error("Please enter a recognize title!", {
+        position: "top-center",
+      });
       return;
     }
 
@@ -84,7 +93,7 @@ const Home = () => {
 
     Swal.fire({
       title: "Are you sure?",
-      text: `User: ${user}, Message: "${message}", SubCateogry: ${subCategory}, Category: ${category}`,
+      text: `User: ${user}, Title: "${title}", Message: "${message}", SubCateogry: ${subCategory}, Category: ${category}`,
       icon: "question",
       showCancelButton: true,
       confirmButtonText: "Yes, submit it!",
@@ -96,12 +105,12 @@ const Home = () => {
           name: user,
           category: category,
           subcategory: subCategory,
+          title: title,
           description: message,
           points: Math.floor(Math.random() * 100) + 1,
         };
 
-        const store =
-          JSON.parse(localStorage.getItem("recognize")) || [];
+        const store = JSON.parse(localStorage.getItem("recognize")) || [];
 
         const multipleDataStore = [...store, storeData];
 
@@ -120,6 +129,7 @@ const Home = () => {
 
         setUser("");
         setMessage("");
+        setTitle("");
         setCategory("Category");
         setSubCategory("Sub Category");
       } else {
@@ -147,9 +157,7 @@ const Home = () => {
                   onChange={(e) => handleMemberSelect(e.target.value)}
                   defaultValue=""
                 >
-                  <option value="" disabled>
-                    Select Member
-                  </option>
+                  <option value="">Select Member</option>
                   <option value="rohil">rohil</option>
                   <option value="xyz">xyz</option>
                   <option value="abc">abc</option>
@@ -162,16 +170,26 @@ const Home = () => {
                 <div className="username">{user}</div>
               </div>
 
-              <textarea
-                value={message}
-                onChange={handleMessageChange}
-                placeholder="Write your text here..."
-              />
+              <div className="user-title">
+                <input
+                  value={title}
+                  onChange={handleTitleChange}
+                  placeholder="Recognize Title..."
+                />
+              </div>
+
+              <div className="user-description">
+                <textarea
+                  value={message}
+                  onChange={handleMessageChange}
+                  placeholder="Write your text here..."
+                />
+              </div>
 
               <div className="points-values">
                 <div className="points-selection">
                   <button onClick={toggleCategory}>
-                    {category}
+                    Select {category}
                     <span>▼</span>
                   </button>
                   {isCategoryOpen && (
@@ -190,7 +208,7 @@ const Home = () => {
 
                 <div className="values-selection">
                   <button onClick={toggleSubCategory}>
-                    {subCategory} <span>▼</span>
+                    Select {subCategory} <span>▼</span>
                   </button>
                   {isSubCategoryOpen && (
                     <ul className="points-dropdown">
@@ -219,29 +237,42 @@ const Home = () => {
             </div>
 
             <div className="reward-item">
-              <Link to="/my-recognitions">
-                <div className="my-reward">My Recognitions</div>
-                <div className="recognitions-list">
-                  <div className="award">
+              <div className="my-reward">My Recognitions</div>
+              <div className="recognitions-list">
+                <div className="award">
+                  <Link to="/my-recognitions">
                     <div className="award-icon">
                       <img src={awardIcon} alt="Award Icon" />
                     </div>
                     <div className="reward-text">Reward</div>
                     <div className="reward-count">10</div>
-                  </div>
-                  <div className="award">
+                  </Link>
+                </div>
+
+                <div className="award">
+                  <Link to="/redemption-point">
                     <div className="award-icon">
                       <img src={badgesIcon} alt="Badge Icon" />
                     </div>
-                    <div className="reward-text">Redemption</div>
-                    <div className="reward-count">45</div>
-                  </div>
+                    <div className="reward-text">Redeem</div>
+                    <div className="reward-count disable">45</div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             </div>
 
             <div className="reward-item">
-              <div className="leaderboard">LeaderBoard-Monthly</div>
+              <div className="reward-header">
+                <div className="leaderboard">Leader Board</div>
+                <select>
+                  <option value="this-month">This Month</option>
+                  <option value='today'>Today</option>
+                  <option value="yesterday">Yesterday</option>
+                  <option value="last-month">Last Month</option>
+                  <option value="year">This Year</option>
+                </select>
+              </div>
+
               <div className="reward-you">
                 <div className="reward-content">
                   <div className="reward-logo">

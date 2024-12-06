@@ -82,18 +82,30 @@ const Recognize = () => {
             </div>
             <div className="point-list">
               <Link to="/redemption-point">
-                <div className="point-title">Your Redemption Point</div>
+                <div className="point-title">Redeem Your Points</div>
               </Link>
 
               <div className="point-count">{redemptionPoints}</div>
             </div>
             <div className="point-list">
-              <div className="point-title">History of Redemption</div>
+              <div className="point-title">Redemption History</div>
+              <div className="point-count">1</div>
             </div>
           </div>
         </div>
 
         <div className="table-container">
+          <div className="filters">
+            <div className="filter-category">
+              <div className="filter-by">Filter By: </div>
+              <select>
+                <option value="this-month">This Month</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="last-month">Last Month</option>
+                <option value="year">This Year</option>
+              </select>
+            </div>
+          </div>
           <table border="1" cellPadding="5" cellSpacing="0">
             <thead>
               <tr>
@@ -157,6 +169,9 @@ const Recognize = () => {
               <ul>
                 <li>
                   <img src={profile} alt="Profile" />
+                </li>
+                <li>
+                  <strong>Recognize Title: </strong> {selectedItem.title}
                 </li>
                 <li>
                   <strong>Description: </strong> {selectedItem.description}

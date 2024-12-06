@@ -39,7 +39,7 @@ const SlideBar = () => {
                     transform="translate(14,1)"
                   />
                 </svg>
-                <span>Redemptions</span>
+                <span>Reward</span>
               </Link>
             </li>
 
